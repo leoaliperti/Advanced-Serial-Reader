@@ -1,0 +1,41 @@
+{
+    "WINDOW_TITLE": "Advanced Serial Reader Pro",
+    "WINDOW_WIDTH": 1050,
+    "WINDOW_HEIGHT": 650,
+    "APPEARANCE_MODE": "Dark",
+    "COLOR_THEME": "blue",
+    "DEFAULT_BAUDRATE": "9600",
+    "DEFAULT_MODE": "Fixed",
+    "DEFAULT_FLOW_DELAY_MS": 500,
+    "MIN_SAFE_DELAY_MS": 10,
+    "FIXED_ONLY_DELAY_MS": 500,
+    "MSG_DURATION_MS": 4000,
+    "CHECKBOX_TIMESTAMP_DEFAULT": 1,
+    "SYSTEM_EVENT_TIMEOUT_S": "5",
+    "AUTO_RECONNECT_DEFAULT": false,
+    "AUTO_RECONNECT_DELAY_MS": 3000,
+    "MAX_GRAPH_POINTS": 10,
+    "CSV_LOG_DIR": "logs",
+    "MACROS": {
+        "Clear Errors": "CLEAR_ERR",
+        "Start Sensor": "START_STREAM",
+        "Stop Sensor": "STOP_STREAM",
+        "Reboot": "RST"
+    },
+    "CSV_LOG_MODE": "Multi-file",
+    "AUTOMATIONS": {
+        "ERROR:": "RESET",
+        "PING": "PONG",
+        "Calibrazione richiesta": "CALIBRATE_START"
+    },
+    "COLOR": {
+        "CONNECT_BTN": "#28a745",
+        "CONNECT_BTN_HOVER": "#218838",
+        "DISCONNECT_BTN": "#dc3545",
+        "DISCONNECT_BTN_HOVER": "#c82333",
+        "SETTINGS_BTN": "#000000",
+        "SETTINGS_BTN_HOVER": "#161616",
+        "FIXED_MODE_COLOR": "#17a2b8",
+        "FLOW_MODE_COLOR": "#28a745"
+    }
+}
