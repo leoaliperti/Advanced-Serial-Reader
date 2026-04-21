@@ -85,8 +85,10 @@ class SerialMonitorApp(ctk.CTk):
         icon_path = resource_path('assets/icon.png')
         icon_ico_path = resource_path('assets/icon.ico')
         if sys.platform.startswith("win"):
+            icon_ico_path = resource_path('assets/icon.ico')
             self.after(200, lambda: self.iconbitmap(icon_ico_path))
-        else:
+        elif sys.platform.startswith("linux"):
+            icon_path = resource_path('assets/icon.png')
             try:
                 from PIL import Image, ImageTk 
                 pil_image = Image.open(icon_path)
@@ -94,6 +96,7 @@ class SerialMonitorApp(ctk.CTk):
                 self.iconphoto(False, tk_icon) 
             except Exception as e:
                 print(f"Errore caricamento icona: {e}")
+        # Su macOS (darwin) non facciamo nulla! Ci pensa il file .app con l'icon.icns
 
         self.setup_ui()
         self.update_port_menu()
