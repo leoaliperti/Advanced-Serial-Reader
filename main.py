@@ -65,8 +65,8 @@ class SerialMonitorApp(ctk.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # Gestione Icona
-        icon_path = os.path.join(os.path.dirname(__file__), 'icon.png')
-        icon_ico_path = os.path.join(os.path.dirname(__file__), 'icon.ico')
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon/icon.png')
+        icon_ico_path = os.path.join(os.path.dirname(__file__), 'icon/icon.ico')
         if sys.platform.startswith("win"):
             self.after(200, lambda: self.iconbitmap(icon_ico_path))
         else:
