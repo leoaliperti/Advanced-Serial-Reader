@@ -1,0 +1,17 @@
+# Ambienti virtuali
+AdvancedSerialReader/
+venv/
+env/
+
+# Cache di Python
+__pycache__/
+*.pyc
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# File di build (che creeremo dopo)
+build/
+dist/
+*.spec

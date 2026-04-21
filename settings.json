@@ -1,0 +1,26 @@
+{
+    "WINDOW_TITLE": "Advanced Serial Reader - Build 10.0",
+    "WINDOW_WIDTH": 1050,
+    "WINDOW_HEIGHT": 650,
+    "APPEARANCE_MODE": "Dark",
+    "COLOR_THEME": "blue",
+    "DEFAULT_BAUDRATE": "9600",
+    "DEFAULT_MODE": "Split",
+    "DEFAULT_FLOW_DELAY_MS": 500,
+    "MIN_SAFE_DELAY_MS": 10,
+    "FIXED_ONLY_DELAY_MS": 500,
+    "MSG_DURATION_MS": 4000,
+    "CHECKBOX_TIMESTAMP_DEFAULT": 1,
+    "SYSTEM_EVENT_TIMEOUT_S": "1",
+    "AUTO_RECONNECT_DEFAULT": false,
+    "AUTO_RECONNECT_DELAY_MS": 3000,
+    "CSV_LOG_DIR": "logs",
+    "MACROS": {
+        "Clear Errors": "CLEAR_ERR",
+        "Start Sensor": "START_STREAM",
+        "Stop Sensor": "STOP_STREAM",
+        "Reboot": "RST",
+        "ciao": "ciao"
+    },
+    "CSV_LOG_MODE": "Multi-file"
+}
