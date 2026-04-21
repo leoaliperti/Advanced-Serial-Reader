@@ -15,3 +15,14 @@ Thumbs.db
 build/
 dist/
 *.spec
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Cartelle di sistema macOS
+.DocumentRevisions-V100
+.Spotlight-V100
+.Trashes
