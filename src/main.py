@@ -1,3 +1,13 @@
+import os
+import sys
+
+# --- FIX AVVIO LENTO MATPLOTLIB ---
+# Creiamo una cartellina nascosta fissa nel computer per salvare la cache
+cache_dir = os.path.join(os.path.expanduser('~'), '.AdvancedSerialReader_cache')
+os.makedirs(cache_dir, exist_ok=True)
+os.environ['MPLCONFIGDIR'] = cache_dir
+# ------
+
 # --- IMPORTAZIONI LIBRERIE STANDARD E TERZE PARTI ---
 import customtkinter as ctk
 import serial.tools.list_ports
@@ -7,8 +17,6 @@ import queue
 import time
 from datetime import datetime
 import csv
-import os
-import sys
 
 # --- IMPORTAZIONI DEI TUOI MODULI VECCHI ---
 import config
