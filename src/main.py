@@ -29,6 +29,15 @@ TERMINATOR_OPTIONS = ["\\n (LF)", "\\r\\n (CRLF)", "None"]
 ctk.set_appearance_mode(config.settings["APPEARANCE_MODE"])
 ctk.set_default_color_theme(config.settings["COLOR_THEME"])
 
+def resource_path(relative_path):
+    """ Ottiene il percorso assoluto delle risorse, funziona sia in sviluppo che come EXE/APP """
+    try:
+        # PyInstaller crea una cartella temporanea in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 # ==========================================
 # --- CLASSE PRINCIPALE DELL'APPLICAZIONE ---
 # ==========================================
@@ -65,8 +74,8 @@ class SerialMonitorApp(ctk.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # Gestione Icona
-        icon_path = os.path.join(os.path.dirname(__file__), '../assets/icon.png')
-        icon_ico_path = os.path.join(os.path.dirname(__file__), '../assets/icon.ico')
+        icon_path = resource_path('assets/icon.png')
+        icon_ico_path = resource_path('assets/icon.ico')
         if sys.platform.startswith("win"):
             self.after(200, lambda: self.iconbitmap(icon_ico_path))
         else:

@@ -2,7 +2,16 @@ import json
 import os
 import time
 
-CONFIG_FILE = "settings.json"
+def resource_path(relative_path):
+    """ Ottiene il percorso assoluto delle risorse, funziona sia in sviluppo che come EXE/APP """
+    try:
+        # PyInstaller crea una cartella temporanea in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+CONFIG_FILE = resource_path("settings.json")
 
 # Inserisci qui tutte le tue costanti originali. 
 # Fungeranno da valori di base se il file JSON non esiste ancora.
