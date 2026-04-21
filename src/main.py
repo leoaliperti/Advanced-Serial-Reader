@@ -82,21 +82,21 @@ class SerialMonitorApp(ctk.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # Gestione Icona
-        icon_path = resource_path('assets/icon.png')
-        icon_ico_path = resource_path('assets/icon.ico')
         if sys.platform.startswith("win"):
+            # Per Windows usiamo il file .ico
             icon_ico_path = resource_path('assets/icon.ico')
             self.after(200, lambda: self.iconbitmap(icon_ico_path))
-        elif sys.platform.startswith("linux"):
+        else:
+            # Per macOS e Linux forziamo il .png
             icon_path = resource_path('assets/icon.png')
             try:
                 from PIL import Image, ImageTk 
                 pil_image = Image.open(icon_path)
                 tk_icon = ImageTk.PhotoImage(pil_image)
-                self.iconphoto(False, tk_icon) 
+                # Il "True" serve per forzare l'icona su tutte le finestre e nel Dock!
+                self.iconphoto(True, tk_icon) 
             except Exception as e:
                 print(f"Errore caricamento icona: {e}")
-        # Su macOS (darwin) non facciamo nulla! Ci pensa il file .app con l'icon.icns
 
         self.setup_ui()
         self.update_port_menu()
